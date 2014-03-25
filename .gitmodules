@@ -1,6 +1,6 @@
-[submodule "dropbox-api"]
-	path = dropbox-api
-	url = git@github.com:dropbox/dropbox-sdk-php.git
-[submodule "aws-api"]
-	path = aws-api
+[submodule "aws-sdk"]
+	path = aws-sdk
 	url = git@github.com:aws/aws-sdk-php.git
+[submodule "dropbox-sdk"]
+	path = dropbox-sdk
+	url = git@github.com:dropbox/dropbox-sdk-php.git
