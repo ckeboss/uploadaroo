@@ -63,7 +63,7 @@ use Aws\S3\Exception\S3Exception;
 				<ul class="list-unstyled">
 				<?php
 					foreach($local_files as $local_file) {
-						echo '<li><a href="">'.$local_file.'</a></li>';
+						echo '<li><a href="download/download.php?file='.urlencode($local_file).'&type=local">'.$local_file.'</a></li>';
 					}
 				?>
 				</ul>
@@ -81,7 +81,7 @@ use Aws\S3\Exception\S3Exception;
 				<ul class="list-unstyled">
 				<?php
 					foreach($files['contents'] as $file) {
-						echo '<li><a href="">'.substr($file['path'], 1).'</a></li>';
+						echo '<li><a href="download/download.php?file='.urlencode($file['path']).'&type=dropbox">'.substr($file['path'], 1).'</a></li>';
 					}
 				?>
 				</ul>
@@ -107,12 +107,11 @@ use Aws\S3\Exception\S3Exception;
 					));
 					
 					if(!empty($aws_files)) {
-					
 					?>
 					<ul class="list-unstyled">
 					<?php
 						foreach ($aws_files as $aws_file) {
-							echo '<li><a href="">'.$aws_file['Key'].'</a></li>';
+							echo '<li><a href="download/download.php?file='.urlencode($aws_file['Key']).'&type=s3">'.$aws_file['Key'].'</a></li>';
 						}
 					?>
 					</ul>

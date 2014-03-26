@@ -103,13 +103,13 @@ if(in_array('s3', $_POST['placeToUpload'])) {
 		array(
 			'key'    => Config::$aws_config['key'],
 			'secret' => Config::$aws_config['secret'],
-			'region' => 'us-east-1',
+			'region' => Config::$aws_config['region'],
 		)
 	);
 	$s3 = $aws->get('s3');
 	
 	try {
-	    $s3->upload('uploadaroo-bucket', $upload_name, fopen($_FILES['uploadedFile']['tmp_name'], 'r'), 'public-read');
+	    $s3->upload(Config::$aws_config['bucket'], $upload_name, fopen($_FILES['uploadedFile']['tmp_name'], 'r'), 'public-read');
 	} catch (S3Exception $e) {
 		$_SESSION['errors']['general'] = 'Error uploading file to dropbox. Please contact the administrator or try again. Error: '.$e->getMessage();
 	}
