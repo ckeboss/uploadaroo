@@ -2,7 +2,7 @@
 
 require_once 'dropbox-sdk/lib/Dropbox/strict.php';
 
-$appInfoFile = array('key' => '9zge693mntwhnww', 'secret' => '0vekd6iq148tnrv');
+$appInfoFile = array('key' => '', 'secret' => '');
 
 require_once 'dropbox-sdk/lib/Dropbox/autoload.php';
 

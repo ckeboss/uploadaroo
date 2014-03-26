@@ -42,7 +42,7 @@ $dbxClient = getClient();
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="index.php">Upload</a></li>
-						<li><a href="uploaded.php">Uploaded Files</a></li>
+						<li><a href="uploaded_files.php">Uploaded Files</a></li>
 						<li><a href="https://github.com/ckeboss/uploadaroo">Code</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
