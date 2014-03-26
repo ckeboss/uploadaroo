@@ -72,9 +72,9 @@ use Aws\S3\Exception\S3Exception;
 				?>
 			</div>
 			<div class="col-sm-4">
-				<?php if($dbxClient !== false) { ?>
 				<h2>Dropbox Files</h2>
 				<?php
+				if($dbxClient !== false) {
 				$files = $dbxClient->getMetadataWithChildren('/');
 				if(!empty($files['contents'])) {
 				?>

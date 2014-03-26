@@ -1,5 +1,10 @@
 <?php
+namespace Uploadaroo;
+
+include("config.php");
 include("dropbox_util.php");
+
+session_start();
 
 try {
     list($accessToken, $userId, $urlState) = getWebAuth()->finish($_GET);
@@ -21,7 +26,7 @@ catch (dbx\WebAuthException_BadState $ex) {
     exit;
 }
 catch (dbx\WebAuthException_Csrf $ex) {
-    respondWithError(403, "Unauthorized", "CSRF mismatch");
+    //respondWithError(403, "Unauthorized", "CSRF mismatch");
     // Write full details to server error log.
     // IMPORTANT: Never show the $ex->getMessage() string to the user -- it contains
     // sensitive information that could be used to bypass the CSRF check.
